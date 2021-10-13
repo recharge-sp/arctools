@@ -47,7 +47,7 @@ def splitarc(arc, parts,flip_trace):
                 nexty = y1 + (y2 - y1) * easings.b(tick/parts)
             else:
                 nexty = y1 + (y2 - y1) * tick/parts
-        result += f"arc({int(old_arc_time)},{int(next_arc_time)},{oldx:0.2f},{nextx:0.2f},l,{oldy:0.2f},{nexty:0.2f},{color},none,{str(is_trace).lower()});\n"
+        result += f"arc({int(old_arc_time)},{int(next_arc_time)},{oldx:0.2f},{nextx:0.2f},s,{oldy:0.2f},{nexty:0.2f},{color},none,{str(is_trace).lower()});\n"
         tick += 1
         oldx = nextx
         oldy = nexty
@@ -56,5 +56,5 @@ def splitarc(arc, parts,flip_trace):
         if flip_trace:
             is_trace = not is_trace
     # last part of arc
-    result += f"arc({int(old_arc_time)},{int(t2)},{oldx:0.2f},{x2:0.2f},l,{oldy:0.2f},{y2:0.2f},{color},none,{str(is_trace).lower()});\n"
+    result += f"arc({int(old_arc_time)},{int(t2)},{oldx:0.2f},{x2:0.2f},s,{oldy:0.2f},{y2:0.2f},{color},none,{str(is_trace).lower()});\n"
     return result
