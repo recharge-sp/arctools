@@ -42,7 +42,7 @@ class EasedTimings(ttk.Frame):
         self.easing = ttk.Combobox(self, values=["s", "b", "si", "so", "qi", "qo", "ci", "co"], width=5)
         self.easing.grid(column=1, row=6)
         self.easing.delete("0", "end")
-        self.easing.insert("0", "l")
+        self.easing.insert("0", "s")
         convert = tk.Button(self, text="Convert", command=self.convert)
         convert.grid(column=2, row=6)
         tk.Label(self, text="Output:").grid(column=0, row=7)
