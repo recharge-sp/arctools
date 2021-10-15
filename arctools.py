@@ -8,7 +8,9 @@ from ui.easedtimings import EasedTimings
 
 root = tk.Tk()
 root.title("arctools")
-notebook = ttk.Notebook(root)
+style = ttk.Style(root)
+style.configure("lefttab.TNotebook", tabposition="wn")
+notebook = ttk.Notebook(root, style="lefttab.TNotebook")
 chartoffset = ChartOffset(notebook)
 notebook.add(chartoffset, text="Chart offset")
 arcoffset = ArcOffset(notebook)
